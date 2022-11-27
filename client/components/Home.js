@@ -7,19 +7,20 @@ import { connect } from "react-redux";
 export const Home = (props) => {
   const { email } = props;
   const { isLoggedIn } = props;
-  console.log(props.auth);
 
   return (
-    <section className="bg-whiteblue container" id="carousel">
-      {isLoggedIn ? (
-        <div>
-          <h3 className="anchor-container">Welcome, {email}</h3>
-          <div className="homepage "></div>
-        </div>
-      ) : (
-        <div className="homepage "></div>
-      )}
-    </section>
+    <div
+      style={{
+        position: "absolute",
+        top: "10vh",
+        left: "0%",
+        height: "90vh",
+        width: "100vw",
+        backgroundColor: "whiteSmoke",
+      }}
+    >
+      <img src="logo.jpg" />
+    </div>
   );
 };
 

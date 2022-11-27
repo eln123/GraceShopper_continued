@@ -12,50 +12,64 @@ export class AllProducts extends React.Component {
     this.props.fetchProducts();
   }
   render() {
-    const products = this.props.products;
-    if (this.props.user.userType === "admin") {
-      return (
-        <section className="bg-green container" id="carousel">
-          <h1 className="anchor-container">Welcome Administrator! Try not to delete anything important</h1>
-          <AddProductForm />
-          <hr />
-          <div className="allProducts">
-            {products.map((product) => (
-              <div className="prodBox" key={product.id}>
-                <Link to={`/products/${product.id}`} key={product.id}>
-                  <h1 className="center"> {product.name} </h1>{" "}
-                  <img src={product.imageSmall} />
-                  <p className="center">National Pokedex</p>
-                  <p className="center">
-                    Number: {product.nationalPokedexNumbers}
-                  </p>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </section>
-      );
-    } else {
-      return (
-        <section className="bg-whiteblue container" id="carousel">
-          <h1>Gotta Collect 'em All!</h1>
-          <div className="allProducts">
-            {products.map((product) => (
-              <div className="prodBox" key={product.id}>
-                <Link to={`/products/${product.id}`} key={product.id}>
-                  <h1 className="center"> {product.name} </h1>
-                  <img src={product.imageSmall} />
-                  <p className="center">National Pokedex</p>
-                  <p className="center">
-                    Number: {product.nationalPokedexNumbers}
-                  </p>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </section>
-      );
+    if (this.props.products) {
+      console.log(this.props.products);
     }
+    const products = this.props.products;
+    return (
+      <div className="allProducts">
+        {products.map((product) => (
+          <div className="prodBox" key={product.id}>
+            <Link to={`/products/${product.id}`} key={product.id}>
+              <div
+                style={{
+                  backgroundColor: "lightgray",
+                  height: "80%",
+                  width: "80%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderRadius: "1em",
+                  padding: "30px 30px",
+                }}
+              >
+                <img src={product.imageSmall} style={{ height: "10%" }} />
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  height: "80%",
+                  width: "100%",
+                  marginBottom: "-6%",
+                  marginTop: "5%",
+                }}
+              >
+                <small
+                  style={{
+                    color: "gray",
+                    marginTop: "5%",
+                    fontSize: "23px",
+                  }}
+                >
+                  National Pokedex Number: {product.nationalPokedexNumbers}
+                </small>
+                <h1 style={{ fontSize: "32px" }}>{product.name} </h1>{" "}
+                <h2
+                  style={{
+                    alignSelf: "end",
+                    marginBottom: "4%",
+                    marginRight: "4%",
+                  }}
+                >
+                  ${product.price}
+                </h2>
+              </div>
+            </Link>
+          </div>
+        ))}
+      </div>
+    );
   }
 }
 

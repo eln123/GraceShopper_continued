@@ -153,7 +153,8 @@ class Cart extends React.Component {
     }, 0);
 
     return (
-      <section className="bg-whiteblue" id="carousel">
+      <div>
+        <h1>ShoppingCart</h1>
         {this.props.isLoggedIn ? (
           <div>
             <ul className="allProducts">
@@ -242,7 +243,7 @@ class Cart extends React.Component {
             </div>
           </div>
         )}
-      </section>
+      </div>
     );
   }
 }
