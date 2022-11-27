@@ -88,84 +88,179 @@ export class SingleProduct extends React.Component {
       <div>
         {isLoggedIn ? (
           this.props.user.userType === "admin" ? (
-            <section className="bg-green" id="carousel">
-              <div className="cartBox2">
+            <div
+              style={{
+                position: "absolute",
+                top: "10%",
+                left: "0%",
+                height: "90vh",
+                width: "100vw",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backgroundColor: "rgb(246, 242, 242)",
+                  height: "50vh",
+                  width: "50vh",
+                  position: "absolute",
+                  top: "15%",
+                  left: "17%",
+                }}
+              >
+                <img src={product.imageSmall} style={{ height: "40vh" }}></img>
+              </div>
+
               <div>
-              <UpdateProduct product={product} />
-              </div>
-              <div className="cartBox2">
-              <img src={product.imageSmall}></img>
-              <div className="bg-white">
-                <h1 className="center">Poke Name: {product.name}</h1>
-                <h1 className="center">
-                  Nat. Dex Number: {product.nationalPokedexNumbers}
-                </h1>
-                <h3 className="center">{product.flavorText}</h3>
-                <h2 className="center">${+product.price / 100}</h2>
-                <nav>
-                  <button
-                    className="center"
-                    type="button"
-                    onClick={() => this.props.addItem(product)}
-                  >
-                    Add to Cart
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      this.handleClick();
-                    }}
-                  >
-                    DELETE ITEM FROM DATABASE
-                  </button>
-                </nav>
-              </div>
-              </div>
-              </div>
-            </section>
-          ) : (
-            <section className="bg-whiteblue" id="carousel">
-              <img src={product.imageSmall}></img>
-              <div>
-                <h1 className="center">Poke Name: {product.name}</h1>
-                <h1 className="center">
-                  Nat. Dex Number: {product.nationalPokedexNumbers}
-                </h1>
-                <h3 className="center">{product.flavorText}</h3>
-                <h2 className="center">${+product.price / 100}</h2>
-                <nav>
-                  <button
-                    className="center"
-                    type="button"
-                    onClick={() => this.props.addItem(product)}
-                  >
-                    Add to Cart
-                  </button>
-                </nav>
-              </div>
-            </section>
-          )
-        ) : (
-          <section className="bg-whiteblue" id="carousel">
-            <img src={product.imageSmall}></img>
-            <div>
-              <h1 className="center">Poke Name: {product.name}</h1>
-              <h1 className="center">
-                Nat. Dex Number: {product.nationalPokedexNumbers}
-              </h1>
-              <h3 className="center">{product.flavorText}</h3>
-              <h2 className="center">${+product.price / 100}</h2>
-              <nav>
-                <button
-                  onClick={() => {
-                    this.addedToCart();
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "2%",
+                    left: "70%",
+
+                    display: "flex",
+                    backgroundColor: "black",
+                    color: "white",
                   }}
                 >
-                  Add to Cart
-                </button>
-              </nav>
+                  <div>
+                    <UpdateProduct product={product} />
+                  </div>
+                  <div
+                    style={{
+                      position: "relative",
+                      width: "300px",
+                      borderLeft: "2px solid white",
+                    }}
+                  >
+                    <h1
+                      style={{
+                        position: "absolute",
+                        top: "-4%",
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                      }}
+                    >
+                      Delete
+                    </h1>
+                    <button
+                      style={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        height: "40%",
+                        width: "50%",
+                        backgroundColor: "black",
+                        color: "white",
+                        fontSize: "20px",
+                        border: "2px solid white",
+                      }}
+                      type="button"
+                      onClick={() => {
+                        this.handleClick();
+                      }}
+                    >
+                      REMOVE ITEM
+                    </button>
+                  </div>
+                </div>
+                <div
+                  style={{
+                    height: "40vh",
+                    width: "20vh",
+                    position: "absolute",
+                    top: "20%",
+                    left: "47%",
+                  }}
+                >
+                  <div>
+                    <h1 style={{ color: "gray" }}>
+                      Home / {product.nationalPokedexNumbers}
+                    </h1>
+                    <h2 style={{ fontSize: "34px", textDecoration: "bold" }}>
+                      {product.name}
+                    </h2>
+                    <h1 style={{ fontSize: "40px" }}>
+                      ${+product.price / 100}
+                    </h1>
+
+                    <button
+                      style={{
+                        backgroundColor: "#e8530f",
+                        color: "white",
+                        border: "0px",
+                        height: "60px",
+                        width: "200px",
+                        fontSize: "28px",
+                      }}
+                      type="button"
+                      onClick={() => this.props.addItem(product)}
+                    >
+                      Add to Cart
+                    </button>
+                    <div style={{ marginTop: "15%" }}>
+                      <h2 style={{ fontDecoration: "bold", fontSize: "24px" }}>
+                        Product Details{" "}
+                      </h2>
+                      <p style={{ fontSize: "22px" }}> {product.flavorText}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </section>
+          ) : (
+            <div>
+              <div>
+                <img src={product.imageSmall}></img>
+              </div>
+              <div>
+                <h1 className="center">Poke Name: {product.name}</h1>
+                <h1 className="center">
+                  Nat. Dex Number: {product.nationalPokedexNumbers}
+                </h1>
+                <h3 className="center">{product.flavorText}</h3>
+                <h2 className="center">${+product.price / 100}</h2>
+                <nav>
+                  <button
+                    className="center"
+                    type="button"
+                    onClick={() => this.props.addItem(product)}
+                  >
+                    Add to Cart
+                  </button>
+                </nav>
+              </div>
+            </div>
+          )
+        ) : (
+          <div>
+            <div>
+              <img src={product.imageSmall}></img>
+              <div>
+                <h1 className="center">Poke Name: {product.name}</h1>
+                <h1 className="center">
+                  Nat. Dex Number: {product.nationalPokedexNumbers}
+                </h1>
+                <h3 className="center">{product.flavorText}</h3>
+                <h2 className="center">${+product.price / 100}</h2>
+                <nav>
+                  <button
+                    onClick={() => {
+                      this.addedToCart();
+                    }}
+                  >
+                    Add to Cart
+                  </button>
+                </nav>
+              </div>{" "}
+            </div>
+          </div>
         )}
       </div>
     );

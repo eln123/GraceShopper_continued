@@ -1,23 +1,14 @@
 body {
   font-family: sans-serif;
-  background-color: #93BFE7;
-
+  background-color: white
 }
+
 
 ul {
   display: flex;
 }
 
-header {
-  position: fixed;
-  margin: 0 4em;
-  padding: 10px;
-  width: calc(100% - 10em);
-  color: #fff;
-  background-color: rgba(37, 37, 37, 0.8);
-  border-radius: 1em 1em 1em 1em;
-  z-index: 2;
-}
+
 
 button:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
@@ -53,58 +44,51 @@ form div {
 a {
   font-size: 20px;
   color: black;
-
   font-style: underline;
   font-weight: bold;
   text-decoration: unset;
   font-family: Arial, Helvetica, sans-serif
 }
 
-.center {
-  text-align: center;
-  align-self: center;
+
+
+/* */
+
+.allProducts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: absolute;
+  top: 10vh;
+  left: 0%;
+  padding-top: 5vh;
+  border-radius: 5px;
 }
 
 .prodBox {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 0px 20px 0px 20px;
-  margin: 1em 1em 1em 1em;
-  border-radius: 1em 1em 1em 1em;
+  background-color: white;
+  margin: 30px;
+  width: 20%;
+  border-radius: 4%;
+  border: .4px solid rgb(169, 166, 166);
 }
 
-.cartBox {
+.prodBox > a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 5px 20px 10px 20px;
-  margin: 1em 1em 1em 1em;
-  border-radius: 1em 1em 1em 1em;
-  background-color: #93BFE7;
+  padding: 20px
 }
 
-.cartBox2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
+
 
 .prodBox:hover {
   transform: scale(1.1,1.1);
   background-color: #93BFE7;
 }
 
-.allProducts {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  background-image: url('pattern-white-blue.jpg');
-  
-  border-radius: 5px;
-}
+
 
 .productChild {
 max-width: 245;
@@ -112,62 +96,3 @@ max-height: 342;
 margin: 5px;
 }
 
-.homepage {
-background-image: url('https://wallpaperaccess.com/full/109332.jpg');
-background-repeat: no-repeat;
-width: 100vw;
-height: 100vh;
-background-size: auto;
-border-radius: 8px;
-background-position: center;
-}
-.logo {
-  background-image: url('Pokeshop-logo.png');
-  z-index: 10;
-}
-.bg-white {
-  background-color: #fff;
-  padding: 10px 30px 30px 30px;
-  border-radius: 1em 1em 1em 1em;
-}
-
-.bg-whiteblue {
-  background-color: #fff;
-  background-image: url('pattern-white-blue.jpg');
-}
-
-.bg-blue {
-  background-color: #93BFE7;
-  background-image: url('pattern-blue.jpg');
-}
-
-.bg-green {
-  background-color: #93BFE7;
-  background-image: url('pattern-green.jpg');
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
-h1 {
-  color: #000000;
-}
-
-section {
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-#carousel {
-  padding-top: 23vh;
-  display: flex;
-  justify-content: center;
-}

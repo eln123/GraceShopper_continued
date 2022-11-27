@@ -22,12 +22,13 @@ const Navbar = ({ handleClick, isLoggedIn, cart, products, isAdmin }) => {
         left: "0%",
         width: "100%",
         height: "10vh",
-        backgroundColor: "white",
+        backgroundColor: "whitesmoke",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-around",
         paddingTop: ".5em",
         paddingBottom: ".5em",
+        borderBottom: ".5px solid black",
       }}
     >
       <h1
@@ -37,14 +38,15 @@ const Navbar = ({ handleClick, isLoggedIn, cart, products, isAdmin }) => {
         }}
       >
         <img
-          src="logo.png"
+          src="/logo.png"
           style={{
             backgroundColor: "black",
-            height: "7vh",
+            height: "100px",
+            width: "100px",
             marginRight: "20px",
             borderRadius: "50%",
           }}
-        ></img>
+        />
         Pokemon TCG Shop.
       </h1>
       {isLoggedIn ? (
@@ -63,13 +65,52 @@ const Navbar = ({ handleClick, isLoggedIn, cart, products, isAdmin }) => {
               <Link to="/editInfo">Edit Your Info</Link>
             </div>
 
-            <div className="anchor-container">
-              <Link to="/users">View Users</Link>
+            <div
+              style={{
+                height: "40px",
+                width: "160px",
+                backgroundColor: "black",
+                color: "white",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Link style={{ color: "white" }} to="/users">
+                View Users
+              </Link>
             </div>
             <div className="anchor-container">
               <a href="#" onClick={handleClick}>
                 Logout
               </a>
+            </div>
+            <div
+              style={{
+                position: "absolute",
+                zIndex: "0",
+                top: "11vh",
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: "30vw",
+                height: "7vh",
+                color: "white",
+                fontSize: "35px",
+                backgroundColor: "black",
+                borderBottomLeftRadius: "50%",
+                borderBottomRightRadius: "50%",
+              }}
+            >
+              <p
+                style={{
+                  position: "absolute",
+                  top: "20%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                }}
+              >
+                This Is Admin View
+              </p>
             </div>
           </div>
         ) : (

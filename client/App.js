@@ -10,15 +10,25 @@ const App = () => {
         <Navbar />
         <Routes />
       </div>
-      <p className="center">
-        {" "}
-        Brought to you by: Ethan Nair, Ryan Scoville, Warren Au, and Yeun Jae
-        Chung
-      </p>
-      <p className="center">
-        {" "}
-        All images and assets are property of their respective owners. This is a project for Fullstack Academy's 2022 June cohort.
-      </p>
+      <div
+        style={{
+          position: "absolute",
+          top: "90%",
+          left: "50%",
+          transform: "translateX(-50%)",
+        }}
+      >
+        <p>
+          {" "}
+          Brought to you by: Ethan Nair, Ryan Scoville, Warren Au, and Yeun Jae
+          Chung
+        </p>
+        <p>
+          {" "}
+          All images and assets are property of their respective owners. This is
+          a project for Fullstack Academy's 2022 June cohort.
+        </p>
+      </div>
     </div>
   );
 };
