@@ -11,7 +11,7 @@ class CartItem extends React.Component {
     this.state = {
       quantity: 1,
       unitPrice: this.props.product.price,
-      totalPrice: this.unitPrice * this.quantity
+      totalPrice: this.unitPrice * this.quantity,
     };
     this.handleQuantity = this.handleQuantity.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -77,8 +77,14 @@ class CartItem extends React.Component {
         </select>
       ) : (
         <div>
-          <input ref={this.inputRef} type="text" defaultValue={quantity} />
+          <input
+            style={{ fontSize: "24px" }}
+            ref={this.inputRef}
+            type="text"
+            defaultValue={quantity}
+          />
           <button
+            style={{ fontSize: "24px" }}
             onClick={() => {
               handleClick();
             }}
@@ -89,18 +95,81 @@ class CartItem extends React.Component {
       );
 
     return (
-      <div className="cartBox">
+      <div
+        style={{
+          fontSize: "24px",
+          width: "98%",
+          paddingTop: "50px",
+
+          paddingBottom: "50px",
+          borderBottom: "2px solid lightgray",
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
         <Link to={`/products/${product.id}`}>
-          <img src={product.imageSmall} />
+          <img style={{ height: "25vh" }} src={product.imageSmall} />
         </Link>
-        <label>Quantity:</label>
-        {renderCheck}
-        <br />
-        <br />
-        <span>Unit Price: ${unitPrice / 100}</span>
-        <h3>Subtotal: ${totalPrice / 100}</h3>
-        <button onClick={handleDelete}>Delete</button>
-        
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+
+            width: "60%",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+
+              height: "5vh",
+            }}
+          >
+            <label> Qty </label>
+            {renderCheck}
+          </div>
+          <div
+            style={{
+              height: "5vh",
+              padding: ".5vw",
+              borderLeft: "2px solid lightgray",
+              marginLeft: "1vw",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <button
+              style={{
+                fontSize: "24px",
+                backgroundColor: "white",
+                border: "0px",
+              }}
+              onClick={handleDelete}
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+        >
+          <div
+            style={{
+              fontSize: "30px",
+              alignSelf: "end",
+              marginRight: "30px",
+              marginTop: "1vh",
+            }}
+          >
+            ${unitPrice / 100}
+          </div>
+          <h3>Subtotal: ${totalPrice / 100}</h3>
+        </div>
       </div>
     );
   }
