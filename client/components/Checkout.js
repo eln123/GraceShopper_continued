@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { me } from "../store";
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
+import Payment from "./Payment";
 
 class Checkout extends React.Component {
   componentDidMount() {
@@ -10,6 +11,9 @@ class Checkout extends React.Component {
   }
 
   render() {
+    if (this.props) {
+      console.log("this.props", this.props);
+    }
     let products = this.props.cart.products || [];
     let auth = this.props.auth || {};
     products = products.sort(function (a, b) {
@@ -18,7 +22,6 @@ class Checkout extends React.Component {
         new Date(a.Order_Product.createdAt)
       );
     });
-    console.log(products);
     let total = products.reduce(function (accum, obj) {
       const {
         Order_Product: { totalPrice },
@@ -26,33 +29,66 @@ class Checkout extends React.Component {
       return accum + totalPrice;
     }, 0);
     return (
-      <section className="bg-whiteblue container" id="carousel">
-        <div className="cartBox">
-          <h1>Checkout</h1>
-          <div>
-            <h3>Shipping Information</h3>
-            <h5>
+      <div
+        style={{
+          position: "absolute",
+          top: "15%",
+          left: "12%",
+          height: "100vh",
+          width: "50vw",
+        }}
+      >
+        <h1>Checkout</h1>
+        <div>
+          <div
+            style={{
+              height: "20vh",
+              borderTop: "2px solid lightgray",
+              borderBottom: "2px solid lightgray",
+            }}
+          >
+            <h1 style={{ fontSize: "40px" }}>1 Shipping Information</h1>
+            <h2>
               Name: {auth.firstName} {auth.lastName}
-            </h5>
-            <h5>Address: {auth.shippingAddress}</h5>
+            </h2>
+            <h2>Address: {auth.shippingAddress}</h2>
             <Link to={"/checkout/edit"}>
-              <button>Edit</button>
+              <button
+                style={{ height: "50px", width: "100px", fontSize: "21px" }}
+              >
+                Edit
+              </button>
             </Link>
           </div>
+          <div
+            style={{
+              height: "20vh",
+
+              borderBottom: "2px solid lightgray",
+            }}
+          >
+            <h1 style={{ fontSize: "40px" }}>2 Payment Information</h1>
+          </div>
+          <div
+            style={{
+              height: "8vh",
+              borderTop: "2px solid lightgray",
+              borderBottom: "2px solid lightgray",
+            }}
+          >
+            <h1 style={{ fontSize: "40px" }}>3 Offers</h1>
+          </div>
+          <div
+            style={{
+              borderTop: "2px solid lightgray",
+              borderBottom: "2px solid lightgray",
+            }}
+          >
+            <h1 style={{ fontSize: "40px" }}>4 Review Items and Shipping</h1>
+            <Payment />
+          </div>
         </div>
-        <div>
-          <h3>Order Preview</h3>
-          <ul>
-            {products.map((product, index) => {
-              return <CartItem product={product} key={index} />;
-            })}
-          </ul>
-          <h1>Total: ${total / 100}</h1>
-          <Link to={`/payment`}>
-            <button>Onto Payment</button>
-          </Link>
-        </div>
-      </section>
+      </div>
     );
   }
 }
