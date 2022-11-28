@@ -155,7 +155,6 @@ class Cart extends React.Component {
                 top: "23%",
                 height: "55%",
                 width: "60%",
-                border: "2px solid red",
               }}
             >
               <p
