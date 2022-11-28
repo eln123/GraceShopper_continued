@@ -47,78 +47,155 @@ class UserInfo extends React.Component {
     //let address = `${this.state.address1} ${this.state.address2} ${this.state.city} ${this.state.state} ${this.state.zip}`;
     const { handleSubmit, handleChange } = this;
     return (
-      <section className="bg-whiteblue container" id='carousel'>
-      <div className="cartBox">
-        <h4>Update User Details:</h4>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="firstName">First name: </label>
-          <input
-            className="input-effect"
-            name="firstName"
-            onChange={handleChange}
-            value={this.state.firstName}
-          />
-          <span className="focus-border" />
-          <br /> <br />
-          <label htmlFor="lastName">Last name: </label>
-          <input
-            className="input-effect"
-            name="lastName"
-            onChange={handleChange}
-            value={this.state.lastName}
-          />
-          <span className="focus-border" />
-          <br /> <br />
-          <label htmlFor="shippingAddress">Shipping Address: </label>
-          <input
-            className="input-effect"
-            name="shippingAddress"
-            onChange={handleChange}
-            value={this.state.shippingAddress}
-          />
-          <span className="focus-border" />
-          <br /> <br />
-          <label htmlFor="billingAddress">Billing Address: </label>
-          <input
-            className="input-effect"
-            name="billingAddress"
-            onChange={handleChange}
-            value={this.state.billingAddress}
-          />
-          <span className="focus-border" />
-          <br /> <br />
-          <label htmlFor="phoneNumber">Phone Number: </label>
-          <input
-            className="input-effect"
-            name="phoneNumber"
-            onChange={handleChange}
-            value={this.state.phoneNumber}
-          />
-          <span className="focus-border" />
-          <br /> <br />
-          <label htmlFor="email">Email: </label>
-          <input
-            className="input-effect"
-            name="email"
-            onChange={handleChange}
-            value={this.state.email}
-          />
-          <span className="focus-border" />
-          <br /> <br />
-          <label htmlFor="password">Password: </label>
-          <input
-            className="input-effect"
-            type="password"
-            name="password"
-            onChange={handleChange}
-            value={this.state.password}
-          />
-          <span className="focus-border" />
-          <br /> <br />
-          <button type="submit">Submit</button>
-        </form>
+      <div
+        style={{
+          height: "100vh",
+          width: "100vw",
+          backgroundColor: "whiteSmoke",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            top: "20vh",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "30vw",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            backgroundColor: "white",
+            border: "2px solid lightgray",
+          }}
+        >
+          <h1 style={{ fontSize: "40px" }}>Update User Details</h1>
+          <form
+            style={{
+              padding: "40px",
+              height: "60%",
+              width: "30%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "10px",
+            }}
+            onSubmit={handleSubmit}
+          >
+            <div>
+              <label
+                style={{
+                  fontSize: "30px",
+                }}
+                htmlFor="firstName"
+              >
+                First name:{" "}
+              </label>
+              <input
+                style={{ fontSize: "30px" }}
+                name="firstName"
+                onChange={handleChange}
+                value={this.state.firstName}
+              />
+            </div>
+            <div>
+              <label
+                style={{ fontSize: "30px", marginBottom: "5px" }}
+                htmlFor="lastName"
+              >
+                Last name:{" "}
+              </label>
+              <input
+                style={{ fontSize: "30px" }}
+                name="lastName"
+                onChange={handleChange}
+                value={this.state.lastName}
+              />
+            </div>
+            <div>
+              <label
+                style={{ fontSize: "30px", marginBottom: "5px" }}
+                htmlFor="shippingAddress"
+              >
+                Shipping Address:{" "}
+              </label>
+              <input
+                style={{ fontSize: "30px" }}
+                name="shippingAddress"
+                onChange={handleChange}
+                value={this.state.shippingAddress}
+              />
+            </div>
+            <div>
+              <label
+                style={{ fontSize: "30px", marginBottom: "5px" }}
+                htmlFor="billingAddress"
+              >
+                Billing Address:{" "}
+              </label>
+              <input
+                style={{ fontSize: "30px" }}
+                name="billingAddress"
+                onChange={handleChange}
+                value={this.state.billingAddress}
+              />
+            </div>
+            <div>
+              <label
+                style={{ fontSize: "30px", marginBottom: "5px" }}
+                htmlFor="phoneNumber"
+              >
+                Phone Number:{" "}
+              </label>
+              <input
+                style={{ fontSize: "30px" }}
+                name="phoneNumber"
+                onChange={handleChange}
+                value={this.state.phoneNumber}
+              />
+            </div>
+            <div>
+              <label
+                style={{ fontSize: "30px", marginBottom: "5px" }}
+                htmlFor="email"
+              >
+                Email:{" "}
+              </label>
+              <input
+                style={{ fontSize: "30px" }}
+                name="email"
+                onChange={handleChange}
+                value={this.state.email}
+              />
+            </div>
+            <div>
+              <label
+                style={{ fontSize: "30px", marginBottom: "5px" }}
+                htmlFor="password"
+              >
+                Password:{" "}
+              </label>
+              <input
+                style={{ fontSize: "30px" }}
+                type="password"
+                name="password"
+                onChange={handleChange}
+                value={this.state.password}
+              />
+            </div>
+            <button
+              style={{
+                height: "60px",
+                width: "200px",
+                backgroundColor: "rgb(255, 217, 0)",
+                fontSize: "30px",
+              }}
+              type="submit"
+            >
+              Save
+            </button>
+          </form>
+        </div>
       </div>
-      </section>
     );
   }
 }
