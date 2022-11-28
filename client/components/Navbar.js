@@ -22,7 +22,7 @@ const Navbar = ({ handleClick, isLoggedIn, cart, products, isAdmin }) => {
         left: "0%",
         width: "100%",
         height: "10vh",
-        backgroundColor: "whitesmoke",
+        backgroundColor: "#69a7e2",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-around",
