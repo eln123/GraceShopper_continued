@@ -1,0 +1,68 @@
+
+
+
+#singleProductComponent #container {
+    position: absolute;
+    top: 10%;
+    left: 0%;
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+
+#singleProductComponent #productImgDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(246, 242, 242);
+    height: 50vh;
+    width: 50vh;
+    position: absolute;
+    top: 15%;
+    left: 17%
+}
+
+#singleProductComponent #divForRightSideStuff {
+    height: 40vh;
+    width: 20vh;
+    position: absolute;
+    top: 20%;
+    left: 47%
+}
+
+#singleProductComponent #h1nationalPokeNum {
+    color: gray
+}
+
+#singleProductComponent #h2productNameHeader {
+    font-size: 34px;
+    text-decoration: bold
+}
+
+#singleProductComponent #productPriceHeader {
+    font-size: 40px
+}
+
+#singleProductComponent #addToCartButton {
+    background-color: rgb(255, 217, 0);
+    border: 0px;
+    height: 60px;
+    width: 200px;
+    font-size: 28px
+}
+
+#productDetailsDiv {
+    margin-top: 15%
+}
+
+#productDetailsHeader {
+    text-decoration: bold;
+    font-size: 24px
+}
+
+#productDetailsParagraph {
+    font-size: 22px
+}

@@ -20,7 +20,8 @@ const Navbar = ({ handleClick, isLoggedIn, cart, products, isAdmin }) => {
         zIndex: "1",
         top: "0%",
         left: "0%",
-        width: "100%",
+        marginLeft: "-.5%",
+        width: "110vw",
         height: "10vh",
         backgroundColor: "#69a7e2",
         display: "flex",
@@ -51,17 +52,17 @@ const Navbar = ({ handleClick, isLoggedIn, cart, products, isAdmin }) => {
       </h1>
       {isLoggedIn ? (
         isAdmin ? (
-          <div className="linkHolder">
-            <div className="anchor-container">
+          <div id="navBarLinkContainer">
+            <div>
               <Link to="/home">Home</Link>
             </div>
-            <div className="anchor-container">
+            <div>
               <Link to="/products">Products({productsLength})</Link>
             </div>
-            <div className="anchor-container">
+            <div>
               <Link to="/cart">Cart({cartItems})</Link>
             </div>
-            <div className="anchor-container">
+            <div>
               <Link to="/editInfo">Edit Your Info</Link>
             </div>
 
@@ -80,7 +81,7 @@ const Navbar = ({ handleClick, isLoggedIn, cart, products, isAdmin }) => {
                 View Users
               </Link>
             </div>
-            <div className="anchor-container">
+            <div>
               <a href="#" onClick={handleClick}>
                 Logout
               </a>
@@ -108,20 +109,20 @@ const Navbar = ({ handleClick, isLoggedIn, cart, products, isAdmin }) => {
             </div>
           </div>
         ) : (
-          <div className="linkHolder">
-            <div className="anchor-container">
+          <div id="navBarLinkContainer">
+            <div>
               <Link to="/home">Home</Link>
             </div>
-            <div className="anchor-container">
+            <div>
               <Link to="/products">Products({productsLength})</Link>
             </div>
-            <div className="anchor-container">
+            <div>
               <Link to="/cart">Cart({cartItems})</Link>
             </div>
-            <div className="anchor-container">
+            <div>
               <Link to="/editInfo">Edit Your Info</Link>
             </div>
-            <div className="anchor-container">
+            <div>
               <a href="#" onClick={handleClick}>
                 Logout
               </a>
@@ -129,17 +130,17 @@ const Navbar = ({ handleClick, isLoggedIn, cart, products, isAdmin }) => {
           </div>
         )
       ) : (
-        <div className="linkHolder">
-          <div className="anchor-container">
+        <div id="navBarLinkContainer">
+          <div>
             <Link to="/home">Home</Link>
           </div>
-          <div className="anchor-container">
+          <div>
             <Link to="/products">Products({productsLength})</Link>
           </div>
-          <div className="anchor-container">
+          <div>
             <Link to="/cart">Cart</Link>
           </div>
-          <div className="anchor-container">
+          <div>
             <Link to="/login">Login / Sign Up</Link>
           </div>
         </div>

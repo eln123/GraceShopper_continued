@@ -85,42 +85,19 @@ export class SingleProduct extends React.Component {
       return <div>Pokemon Deleted! Go back to all products...</div>;
     }
     return (
-      <div>
+      <div id="singleProductComponent">
         {isLoggedIn ? (
           this.props.user.userType === "admin" ? (
-            <div
-              style={{
-                position: "absolute",
-                top: "10%",
-                left: "0%",
-                height: "90vh",
-                width: "100vw",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  backgroundColor: "rgb(246, 242, 242)",
-                  height: "50vh",
-                  width: "50vh",
-                  position: "absolute",
-                  top: "15%",
-                  left: "17%",
-                }}
-              >
+            <div id="container">
+              <div id="productImgDiv">
                 <img src={product.imageSmall} style={{ height: "40vh" }}></img>
               </div>
 
-              <div>
+              <div id="adminPartOfThisPage">
                 <div
                   style={{
                     position: "absolute",
-                    top: "2%",
+                    top: "20%",
                     left: "70%",
 
                     display: "flex",
@@ -128,9 +105,8 @@ export class SingleProduct extends React.Component {
                     color: "white",
                   }}
                 >
-                  <div>
-                    <UpdateProduct product={product} />
-                  </div>
+                  <UpdateProduct product={product} />
+
                   <div
                     style={{
                       position: "relative",
@@ -170,95 +146,89 @@ export class SingleProduct extends React.Component {
                     </button>
                   </div>
                 </div>
-                <div
-                  style={{
-                    height: "40vh",
-                    width: "20vh",
-                    position: "absolute",
-                    top: "20%",
-                    left: "47%",
-                  }}
-                >
-                  <div>
-                    <h1 style={{ color: "gray" }}>
-                      Home / {product.nationalPokedexNumbers}
-                    </h1>
-                    <h2 style={{ fontSize: "34px", textDecoration: "bold" }}>
-                      {product.name}
-                    </h2>
-                    <h1 style={{ fontSize: "40px" }}>
-                      ${+product.price / 100}
-                    </h1>
 
-                    <button
-                      style={{
-                        backgroundColor: "rgb(255, 217, 0)",
+                <div id="divForRightSideStuff">
+                  <h1 id="h1nationalPokeNum">
+                    Home / {product.nationalPokedexNumbers}
+                  </h1>
+                  <h2 id="h2productNameHeader">{product.name}</h2>
+                  <h1 id="productPriceHeader">${+product.price / 100}</h1>
 
-                        border: "0px",
-                        height: "60px",
-                        width: "200px",
-                        fontSize: "28px",
-                      }}
-                      type="button"
-                      onClick={() => this.props.addItem(product)}
-                    >
-                      Add to Cart
-                    </button>
-                    <div style={{ marginTop: "15%" }}>
-                      <h2 style={{ fontDecoration: "bold", fontSize: "24px" }}>
-                        Product Details{" "}
-                      </h2>
-                      <p style={{ fontSize: "22px" }}> {product.flavorText}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div>
-              <div>
-                <img src={product.imageSmall}></img>
-              </div>
-              <div>
-                <h1 className="center">Poke Name: {product.name}</h1>
-                <h1 className="center">
-                  Nat. Dex Number: {product.nationalPokedexNumbers}
-                </h1>
-                <h3 className="center">{product.flavorText}</h3>
-                <h2 className="center">${+product.price / 100}</h2>
-                <nav>
                   <button
-                    className="center"
+                    id="addToCartButton"
                     type="button"
                     onClick={() => this.props.addItem(product)}
                   >
                     Add to Cart
                   </button>
-                </nav>
+                  <div id="productDetailsDiv">
+                    <h2 id="productDetailsHeader">Product Details </h2>
+                    <p
+                      id="productDetailsParagraph"
+                      style={{ fontSize: "22px" }}
+                    >
+                      {" "}
+                      {product.flavorText}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div id="container">
+              <div id="productImgDiv">
+                <img src={product.imageSmall} style={{ height: "40vh" }}></img>
+              </div>
+              <div id="divForRightSideStuff">
+                <h1 id="h1nationalPokeNum">
+                  Home / {product.nationalPokedexNumbers}
+                </h1>
+                <h2 id="h2productNameHeader">{product.name}</h2>
+                <h1 id="productPriceHeader">${+product.price / 100}</h1>
+
+                <button
+                  id="addToCartButton"
+                  type="button"
+                  onClick={() => this.props.addItem(product)}
+                >
+                  Add to Cart
+                </button>
+                <div id="productDetailsDiv">
+                  <h2 id="productDetailsHeader">Product Details </h2>
+                  <p id="productDetailsParagraph" style={{ fontSize: "22px" }}>
+                    {" "}
+                    {product.flavorText}
+                  </p>
+                </div>
               </div>
             </div>
           )
         ) : (
-          <div>
-            <div>
-              <img src={product.imageSmall}></img>
-              <div>
-                <h1 className="center">Poke Name: {product.name}</h1>
-                <h1 className="center">
-                  Nat. Dex Number: {product.nationalPokedexNumbers}
-                </h1>
-                <h3 className="center">{product.flavorText}</h3>
-                <h2 className="center">${+product.price / 100}</h2>
-                <nav>
-                  <button
-                    onClick={() => {
-                      this.addedToCart();
-                    }}
-                  >
-                    Add to Cart
-                  </button>
-                </nav>
-              </div>{" "}
+          <div id="container">
+            <div id="productImgDiv">
+              <img src={product.imageSmall} style={{ height: "40vh" }}></img>
+            </div>
+            <div id="divForRightSideStuff">
+              <h1 id="h1nationalPokeNum">
+                Home / {product.nationalPokedexNumbers}
+              </h1>
+              <h2 id="h2productNameHeader">{product.name}</h2>
+              <h1 id="productPriceHeader">${+product.price / 100}</h1>
+
+              <button
+                id="addToCartButton"
+                type="button"
+                onClick={() => this.addedToCart()}
+              >
+                Add to Cart
+              </button>
+              <div id="productDetailsDiv">
+                <h2 id="productDetailsHeader">Product Details </h2>
+                <p id="productDetailsParagraph" style={{ fontSize: "22px" }}>
+                  {" "}
+                  {product.flavorText}
+                </p>
+              </div>
             </div>
           </div>
         )}
