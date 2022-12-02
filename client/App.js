@@ -5,11 +5,9 @@ import Routes from "./Routes";
 
 const App = () => {
   return (
-    <div className="bg-white">
-      <div>
-        <Navbar />
-        <Routes />
-      </div>
+    <div id="app.js">
+      <Navbar />
+      <Routes />
     </div>
   );
 };

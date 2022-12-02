@@ -192,8 +192,8 @@ export class SingleProduct extends React.Component {
 
                     <button
                       style={{
-                        backgroundColor: "#e8530f",
-                        color: "white",
+                        backgroundColor: "rgb(255, 217, 0)",
+
                         border: "0px",
                         height: "60px",
                         width: "200px",
