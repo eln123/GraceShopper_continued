@@ -15,8 +15,8 @@ const Navbar = ({ handleClick, isLoggedIn, cart, products, isAdmin }) => {
 
   return (
     <div
+      id="doesNotMatterIfYouAreLoggedIn"
       style={{
-        position: "absolute",
         zIndex: "1",
         top: "0%",
         left: "0%",
@@ -88,29 +88,23 @@ const Navbar = ({ handleClick, isLoggedIn, cart, products, isAdmin }) => {
             <div
               style={{
                 position: "absolute",
-                zIndex: "0",
+                zIndex: "1",
                 top: "11vh",
                 left: "50%",
                 transform: "translateX(-50%)",
-                width: "30vw",
-                height: "7vh",
+                width: "100vw",
+                height: "10vh",
                 color: "white",
                 fontSize: "35px",
-                backgroundColor: "black",
+                backgroundColor: "limegreen",
                 borderBottomLeftRadius: "50%",
                 borderBottomRightRadius: "50%",
+                display: "flex",
+
+                justifyContent: "center",
               }}
             >
-              <p
-                style={{
-                  position: "absolute",
-                  top: "20%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
-                }}
-              >
-                This Is Admin View
-              </p>
+              <p style={{ fontSize: "59px" }}>This Is Admin View</p>
             </div>
           </div>
         ) : (

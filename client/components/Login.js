@@ -32,12 +32,12 @@ export class Login extends React.Component {
   }
   render() {
     return (
-      <section className="bg-whiteblue" id='carousel'>
+      <section className="bg-whiteblue" id="carousel">
         <h1>Login Test</h1>
         <div>
-        <div>
-          <AuthForm />
-        </div>
+          <div>
+            <AuthForm />
+          </div>
           <div>{/*<CreateUser /> goes here*/}</div>
         </div>
       </section>

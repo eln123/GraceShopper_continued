@@ -15,46 +15,16 @@ export class AllUsers extends React.Component {
   render() {
     if (this.props.user.userType === "admin") {
       return (
-        <section className="bg-green" id='carousel'>
-          <h1>All Users Component</h1>
-
-          <hr />
-          <div>
-            {this.props.users.map((user) => (
-              <div key={user.id}>
-                <h3>Name: {user.firstName} {user.lastName}</h3>
-                <ul>
-                  <li>user email: {user.email}</li>
-                  <li> user id: {user.id}</li>
-                  <li> user created at: {user.createdAt}</li>
-                  <li>user billing address: </li>
-                  <li>
-                    {" "}
-                    {user.billingAddress
-                      ? user.billingAddress
-                      : "no billing address"}
-                    user shipping address:{" "}
-                  </li>
-                  <li>
-                    {" "}
-                    {user.shippingAddress
-                      ? user.shippingAddress
-                      : "no shipping address"}
-                  </li>
-
-                  <li>
-                    {" "}
-                    user phone number:{" "}
-                    {user.phoneNumber ? user.phoneNumber : "no phone number"}
-                  </li>
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
+        <table>
+          {this.props.users.map((user) => (
+            <tr>
+              <td>hi</td>
+            </tr>
+          ))}
+        </table>
       );
     } else {
-      return <section className="bg-green" id='carousel'>You should not be here</section>;
+      return <div>You should not be here</div>;
     }
   }
 }
