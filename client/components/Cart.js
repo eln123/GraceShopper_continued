@@ -223,7 +223,7 @@ class Cart extends React.Component {
           <div
             style={{
               fontSize: "30px",
-              borderBottom: "2px solid lightgray",
+              borderBottom: "2px solid lightGray",
               marginLeft: "2%",
               width: "95%",
               display: "flex",

@@ -34,14 +34,7 @@ form div {
   display: inline-block;
 }
 
-.linkHolder {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 100%;
-  width: 40%;
- 
-}
+
 
 a {
   font-size: 20px;

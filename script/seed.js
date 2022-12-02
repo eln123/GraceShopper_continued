@@ -30,13 +30,20 @@ async function seed() {
     }
   });
 
-  const [yj, ethan, warren, ryan] = await Promise.all([
+  const [ethan, ethanNotAdmin, yj, warren, ryan] = await Promise.all([
     User.create({
       email: "ethan@123.com",
       password: "Hi123",
       firstName: "Ethan",
       lastName: "Nair",
       userType: "admin",
+    }),
+    User.create({
+      email: "ethan@notAdmin.com",
+      password: "Hi123",
+      firstName: "Ethan",
+      lastName: "notAdmin",
+      userType: "standard",
     }),
     User.create({
       email: "a920cyj@gmail.com",
