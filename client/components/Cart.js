@@ -145,137 +145,58 @@ class Cart extends React.Component {
           }}
         >
           <Link to={"/checkout"}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                position: "absolute",
-                left: "50%",
-                transform: "translateX(-50%)",
-                top: "23%",
-                height: "55%",
-                width: "60%",
-              }}
-            >
-              <p
-                style={{
-                  marginTop: "35%",
-                  marginLeft: "15%",
-                  fontSize: "27px",
-                }}
-              >
-                Subtotal:{" "}
-              </p>{" "}
-              <h1 style={{ marginTop: "35%", marginLeft: "5%" }}>
-                ${total / 100}
-              </h1>
+            <div id="checkoutDiv">
+              <p id="subTotalParagraph">Subtotal: </p>{" "}
+              <h1 id="subTotalForEntireThing">${total / 100}</h1>
             </div>
-            <button
-              style={{
-                position: "absolute",
-                top: "70%",
-                left: "50%",
-                transform: "translateX(-50%)",
-                height: "5vh",
-                width: "15vw",
-                fontSize: "24px",
-                backgroundColor: "rgb(246, 215, 13)",
-              }}
-            >
-              Proceed to checkout
-            </button>
+            <button id="proceedToCheckoutButton">Proceed to checkout</button>
           </Link>
         </div>
       ) : (
         <Link to={"/products"}>
-          <button>Explore All Items!</button>
+          <button id="proceedToCheckoutButton">Explore All Items!</button>
         </Link>
       );
 
     const buttonCheckForGuest =
       loggedOutCart.length > 0 ? (
         <Link to={"/signup"}>
-          <button>Proceed to Checkout</button>
+          <button id="proceedToCheckoutButton">Proceed to Checkout</button>
         </Link>
       ) : (
         <Link to={"/products"}>
-          <button>Explore All Items!</button>
+          <button id="proceedToCheckoutButton">Explore All Items!</button>
         </Link>
       );
 
     return (
-      <div
-        style={{
-          height: "300vh",
-          width: "300vw",
-          backgroundColor: "rgb(226, 225, 225)",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            backgroundColor: "white",
-            top: "25vh",
-            left: "1.5vw",
-            width: "65vw",
-          }}
-        >
-          <div
-            style={{
-              fontSize: "30px",
-              borderBottom: "2px solid lightGray",
-              marginLeft: "2%",
-              width: "95%",
-              display: "flex",
-
-              display: "flex",
-
-              justifyContent: "space-between",
-            }}
-          >
-            <h1
-              style={{
-                fontSize: "50px",
-                alignSelf: "center",
-              }}
-            >
-              Shopping Cart
-            </h1>
-            <h2
-              style={{
-                fontSize: "30px",
-                alignSelf: "end",
-                marginRight: "10px",
-              }}
-            >
-              Price
-            </h2>
+      <div id="cartEntireContainer">
+        <div id="cartDiv">
+          <div id="divForCartHeaders">
+            <h1 id="shoppingCartHeader">Shopping Cart</h1>
+            <h2 id="priceHeader">Price</h2>
           </div>
           {this.props.isLoggedIn ? (
-            <div
-              style={{
-                marginBottom: "10px",
-                padding: "6px",
-              }}
-            >
-              <ul style={{ display: "flex", flexDirection: "column" }}>
+            <div id="cartConditionalContainer">
+              <ul id="ulCartItems">
                 {products.map((product, index) => {
                   return <CartItem product={product} key={index} />;
                 })}
               </ul>
-              <div style={{ marginLeft: "90%" }}>
+              <div id="divForSubTotal">
                 <h1>SubTotal: ${total / 100}</h1>
                 {buttonCheckForUser}
               </div>
             </div>
           ) : (
-            <div>
-              <ul className="allProducts">
+            <div id="cartConditionalContainer">
+              <ul id="ulCartItems">
                 {loggedOutCart.map((product) => {
                   this.state.total += product.Order_Product.totalPrice;
                   const renderCheck =
                     product.Order_Product.quantity < 10 ? (
                       <select
+                        id="cartQtySelect"
                         value={product.Order_Product.quantity}
                         onChange={(evt) => {
                           this.handleQuantity(evt, product);
@@ -295,11 +216,13 @@ class Cart extends React.Component {
                     ) : (
                       <div>
                         <input
+                          id="renderCheckUpdateInput"
                           ref={this.inputRef}
                           type="text"
                           defaultValue={product.Order_Product.quantity}
                         />
                         <button
+                          id="renderCheckUpdateButton"
                           onClick={() => {
                             this.updateQuantity(product);
                           }}
@@ -309,37 +232,48 @@ class Cart extends React.Component {
                       </div>
                     );
                   return (
-                    <div className="cartBox" key={product.id}>
+                    <div id="cartItemEntireContainer" key={product.id}>
                       <Link to={`/products/${product.id}`}>
-                        <img src={product.imageSmall} />
+                        <img id="cartItemLinkImg" src={product.imageSmall} />
                       </Link>
-                      <label>Quantity:</label>
-                      {renderCheck}
-                      <br />
-                      <br />
-                      <span>
-                        Unit Price: ${product.Order_Product.unitPrice / 100}
-                      </span>
-                      <h3>
-                        Subtotal: $
-                        {(product.Order_Product.quantity *
-                          product.Order_Product.unitPrice) /
-                          100}
-                      </h3>
-                      <button
-                        onClick={() => {
-                          this.deleteFromLocalStorage(product);
-                          this.reRender();
-                        }}
-                      >
-                        Delete
-                      </button>
+
+                      <div id="cartItemDivOne">
+                        <div id="cartItemQtyDiv">
+                          <label>Quantity:</label>
+                          {renderCheck}
+                        </div>
+
+                        <div id="cartItemDeleteButtonDiv">
+                          <button
+                            id="cartItemDeleteButton"
+                            onClick={() => {
+                              this.deleteFromLocalStorage(product);
+                              this.reRender();
+                            }}
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </div>
+
+                      <div id="cartItemDivTwo">
+                        <div id="cartItemUnitPriceDiv">
+                          Unit Price: ${product.Order_Product.unitPrice / 100}
+                        </div>
+                        <h3>
+                          Subtotal: $
+                          {(product.Order_Product.quantity *
+                            product.Order_Product.unitPrice) /
+                            100}
+                        </h3>
+                      </div>
                     </div>
                   );
                 })}
               </ul>
-              <div className="cartBox">
-                <h1>Total: ${this.state.total / 100}</h1>
+
+              <div id="divForSubTotal">
+                <h1>SubTotal: ${this.state.total / 100}</h1>
                 {buttonCheckForGuest}
               </div>
             </div>
@@ -355,17 +289,6 @@ const mapStateToProps = (state) => {
     isLoggedIn: !!state.auth.id,
     cart: state.cart,
     auth: state.auth,
-    // localStorage: () => {
-    //   let localStorage = window.localStorage;
-    //   let returnArr = [];
-    //   for (let key in localStorage) {
-    //     if (+key) {
-    //       let parsed = JSON.parse(localStorage[key]);
-    //       returnArr.push(parsed);
-    //     }
-    //   }
-    //   return returnArr;
-    // }
   };
 };
 

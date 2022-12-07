@@ -1,0 +1,66 @@
+
+
+#renderCheckUpdateInput {
+    font-size: 24px
+}
+
+#renderCheckUpdateButton {
+    font-size: 24px
+}
+
+
+#cartItemEntireContainer {
+    font-size: 24px;
+    width: 98%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-bottom: 2px solid lightgray;
+    display: flex;
+    justify-content: space-between
+}
+
+#cartItemLinkImg {
+    height: 25vh
+}
+
+#cartItemDivOne  {
+    display: flex;
+    align-items: center;
+    width: 60%
+  }
+
+
+#cartItemQtyDiv {
+    display: flex;
+    align-items: center;
+position: relative;
+    height: 5vh
+  }
+
+#cartItemDeleteButtonDiv {
+    height: 5vh;
+    padding: .5vw;
+    border-left: 2px solid lightgray;
+    margin-left: 1vw;
+    display: flex;
+    align-items: center
+  }
+
+  #cartItemDeleteButton {
+    font-size: 24px;
+    background-color: white;
+    border: 0px
+  }
+
+  #cartItemDivTwo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+  }
+
+  #cartItemUnitPriceDiv {
+    font-size: 30px;
+    align-self: end;
+    margin-right: 30px;
+    margin-top: 1vh
+  }

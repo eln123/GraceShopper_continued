@@ -1,0 +1,104 @@
+
+#cartEntireContainer {
+    height: 300vh;
+    width: 300vw;
+    background-color: rgb(226, 225, 225)
+}
+
+#cartDiv {
+    position: absolute;
+    background-color: white;
+    top: 25vh;
+    left: 1.5vw;
+    width: 65vw;
+} 
+
+#checkoutDiv {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 23%;
+    height: 55%;
+    width: 60%;
+}
+
+#checkoutDiv #subTotalParagraph {
+    margin-top: 35%;
+    margin-left: 15%;
+    font-size: 27px
+}
+
+#checkoutDiv #subTotalh1 {
+    margin-top: 35%;
+    margin-left: 5%
+}
+
+#proceedToCheckoutButton {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 5vh;
+    width: 15vw;
+    font-size: 24px;
+    background-color: rgb(246, 215, 13)
+}
+
+#divForCartHeaders {
+    font-size: 30px;
+    border-bottom: 2px solid lightGray;
+    margin-left: 2%;
+    width: 95%;
+    display: flex;
+    justify-content: space-between
+}
+
+#shoppingCartHeader {
+    font-size: 50px;
+    align-self: center,
+  }
+
+  #priceHeader {
+    font-size: 30px;
+    align-self: end;
+    margin-right: 10px
+  }
+
+
+  #cartConditionalContainer {
+    margin-bottom: 10px;
+    padding: 6px
+  }
+
+  #ulCartItems { 
+    display: flex; 
+    flex-direction: column
+}
+
+#divForSubTotal {
+    margin-left: 90%
+}
+
+#subTotalForEntireThing { 
+    margin-top: 35%;
+    margin-left: 5%
+}
+
+
+#cartQtySelect {
+    height: 70px;
+    width: 200px;
+    background-color: rgb(230, 224, 224);
+    font-size: 27px
+}
+
+#qtyLabel {
+    position: absolute;
+    left: 5px
+}
+
+#cartQtyOption {
+    
+}
