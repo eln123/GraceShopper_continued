@@ -56,35 +56,56 @@ class CartItem extends React.Component {
     const { product } = this.props;
     const { quantity, unitPrice, totalPrice } = this.state;
     const { handleClick, handleQuantity, handleDelete } = this;
-    const renderCheck =
+    const selectMenu =
       quantity < 10 ? (
         <select
+          id="cartQtySelect"
           value={quantity}
           onChange={(evt) => {
             handleQuantity(evt);
           }}
         >
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10+</option>
+          <option id="cartQtyOption" value="1">
+            1
+          </option>
+          <option id="cartQtyOption" value="2">
+            2
+          </option>
+          <option id="cartQtyOption" value="3">
+            3
+          </option>
+          <option id="cartQtyOption" value="4">
+            4
+          </option>
+          <option id="cartQtyOption" value="5">
+            5
+          </option>
+          <option id="cartQtyOption" value="6">
+            6
+          </option>
+          <option id="cartQtyOption" value="7">
+            7
+          </option>
+          <option id="cartQtyOption" value="8">
+            8
+          </option>
+          <option id="cartQtyOption" value="9">
+            9
+          </option>
+          <option id="cartQtyOption" value="10">
+            10+
+          </option>
         </select>
       ) : (
         <div>
           <input
-            style={{ fontSize: "24px" }}
+            id="renderCheckUpdateInput"
             ref={this.inputRef}
             type="text"
             defaultValue={quantity}
           />
           <button
-            style={{ fontSize: "24px" }}
+            id="renderCheckUpdateButton"
             onClick={() => {
               handleClick();
             }}
@@ -95,79 +116,23 @@ class CartItem extends React.Component {
       );
 
     return (
-      <div
-        style={{
-          fontSize: "24px",
-          width: "98%",
-          paddingTop: "50px",
-
-          paddingBottom: "50px",
-          borderBottom: "2px solid lightgray",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
+      <div id="cartItemEntireContainer">
         <Link to={`/products/${product.id}`}>
-          <img style={{ height: "25vh" }} src={product.imageSmall} />
+          <img id="cartItemLinkImg" src={product.imageSmall} />
         </Link>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-
-            width: "60%",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-
-              height: "5vh",
-            }}
-          >
-            <label> Qty </label>
-            {renderCheck}
+        <div id="cartItemDivOne">
+          <div id="cartItemQtyDiv">
+            <label id="qtyLabel"> Qty | </label>
+            {selectMenu}
           </div>
-          <div
-            style={{
-              height: "5vh",
-              padding: ".5vw",
-              borderLeft: "2px solid lightgray",
-              marginLeft: "1vw",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <button
-              style={{
-                fontSize: "24px",
-                backgroundColor: "white",
-                border: "0px",
-              }}
-              onClick={handleDelete}
-            >
+          <div id="cartItemDeleteButtonDiv">
+            <button id="cartItemDeleteButton" onClick={handleDelete}>
               Delete
             </button>
           </div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-          }}
-        >
-          <div
-            style={{
-              fontSize: "30px",
-              alignSelf: "end",
-              marginRight: "30px",
-              marginTop: "1vh",
-            }}
-          >
-            ${unitPrice / 100}
-          </div>
+        <div id="cartItemDivTwo">
+          <div id="cartItemUnitPriceDiv">${unitPrice / 100}</div>
           <h3>Subtotal: ${totalPrice / 100}</h3>
         </div>
       </div>
