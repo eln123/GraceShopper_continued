@@ -1,0 +1,53 @@
+
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    width: 30%;
+    height: 60%;
+    padding: 0 0 0 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    
+  }
+
+#divLoginForm {
+    height: 12%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    padding: 20px;
+    font-size: 49px;
+    margin: 0 0 0 0
+}
+
+#loginForm input {
+    width: 400px;
+    height: 500px;
+    margin-top: 10px;
+    font-size: 38px
+}
+
+#loginForm button {
+    width: 500px;
+    height: 100px;
+    font-size: 48px;
+    background-color: rgb(255, 225, 0);
+}
+
+#loginForm a {
+    width: 500px;
+    height: 100px;
+    font-size: 30px;
+    
+    display: flex;
+    justify-content: center;
+    margin: 0 0 0 0
+}
+

@@ -87,18 +87,23 @@
 }
 
 
-#cartQtySelect {
+#cartSelectMenuContainer {
+   
+
     height: 70px;
-    width: 200px;
-    background-color: rgb(230, 224, 224);
-    font-size: 27px
+    width: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 10px
 }
 
 #qtyLabel {
-    position: absolute;
-    left: 5px
+   font-size: 27px
 }
 
-#cartQtyOption {
-    
+#cartQtySelect {
+    height: 60%;
+  
+    font-size: 27px
 }
