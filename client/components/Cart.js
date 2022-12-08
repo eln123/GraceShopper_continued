@@ -160,9 +160,20 @@ class Cart extends React.Component {
 
     const buttonCheckForGuest =
       loggedOutCart.length > 0 ? (
-        <Link to={"/signup"}>
-          <button id="proceedToCheckoutButton">Proceed to Checkout</button>
-        </Link>
+        <div
+          style={{
+            position: "absolute",
+            top: "0vh",
+            left: "70vw",
+            height: "30vh",
+            width: "20vw",
+            backgroundColor: "white",
+          }}
+        >
+          <Link to={"/signup"}>
+            <button id="proceedToCheckoutButton">Proceed to Checkout</button>
+          </Link>
+        </div>
       ) : (
         <Link to={"/products"}>
           <button id="proceedToCheckoutButton">Explore All Items!</button>
@@ -193,26 +204,29 @@ class Cart extends React.Component {
               <ul id="ulCartItems">
                 {loggedOutCart.map((product) => {
                   this.state.total += product.Order_Product.totalPrice;
-                  const renderCheck =
+                  const selectMenu =
                     product.Order_Product.quantity < 10 ? (
-                      <select
-                        id="cartQtySelect"
-                        value={product.Order_Product.quantity}
-                        onChange={(evt) => {
-                          this.handleQuantity(evt, product);
-                        }}
-                      >
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10+</option>
-                      </select>
+                      <div id="cartSelectMenuContainer">
+                        <label id="qtyLabel"> Qty: </label>
+                        <select
+                          id="cartQtySelect"
+                          value={product.Order_Product.quantity}
+                          onChange={(evt) => {
+                            this.handleQuantity(evt, product);
+                          }}
+                        >
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10+</option>
+                        </select>
+                      </div>
                     ) : (
                       <div>
                         <input
@@ -238,10 +252,7 @@ class Cart extends React.Component {
                       </Link>
 
                       <div id="cartItemDivOne">
-                        <div id="cartItemQtyDiv">
-                          <label>Quantity:</label>
-                          {renderCheck}
-                        </div>
+                        <div id="cartItemQtyDiv">{selectMenu}</div>
 
                         <div id="cartItemDeleteButtonDiv">
                           <button

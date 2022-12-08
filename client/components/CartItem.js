@@ -58,44 +58,27 @@ class CartItem extends React.Component {
     const { handleClick, handleQuantity, handleDelete } = this;
     const selectMenu =
       quantity < 10 ? (
-        <select
-          id="cartQtySelect"
-          value={quantity}
-          onChange={(evt) => {
-            handleQuantity(evt);
-          }}
-        >
-          <option id="cartQtyOption" value="1">
-            1
-          </option>
-          <option id="cartQtyOption" value="2">
-            2
-          </option>
-          <option id="cartQtyOption" value="3">
-            3
-          </option>
-          <option id="cartQtyOption" value="4">
-            4
-          </option>
-          <option id="cartQtyOption" value="5">
-            5
-          </option>
-          <option id="cartQtyOption" value="6">
-            6
-          </option>
-          <option id="cartQtyOption" value="7">
-            7
-          </option>
-          <option id="cartQtyOption" value="8">
-            8
-          </option>
-          <option id="cartQtyOption" value="9">
-            9
-          </option>
-          <option id="cartQtyOption" value="10">
-            10+
-          </option>
-        </select>
+        <div id="cartSelectMenuContainer">
+          <label id="qtyLabel"> Qty: </label>
+          <select
+            id="cartQtySelect"
+            value={quantity}
+            onChange={(evt) => {
+              handleQuantity(evt);
+            }}
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10+</option>
+          </select>
+        </div>
       ) : (
         <div>
           <input
@@ -121,10 +104,7 @@ class CartItem extends React.Component {
           <img id="cartItemLinkImg" src={product.imageSmall} />
         </Link>
         <div id="cartItemDivOne">
-          <div id="cartItemQtyDiv">
-            <label id="qtyLabel"> Qty | </label>
-            {selectMenu}
-          </div>
+          <div id="cartItemQtyDiv">{selectMenu}</div>
           <div id="cartItemDeleteButtonDiv">
             <button id="cartItemDeleteButton" onClick={handleDelete}>
               Delete

@@ -20,7 +20,8 @@
 }
 
 #cartItemLinkImg {
-    height: 25vh
+    height: 25vh;
+    margin-left: 10%
 }
 
 #cartItemDivOne  {
@@ -33,7 +34,7 @@
 #cartItemQtyDiv {
     display: flex;
     align-items: center;
-position: relative;
+    position: relative;
     height: 5vh
   }
 
@@ -43,11 +44,12 @@ position: relative;
     border-left: 2px solid lightgray;
     margin-left: 1vw;
     display: flex;
-    align-items: center
+    align-items: center;
+
   }
 
   #cartItemDeleteButton {
-    font-size: 24px;
+    font-size: 27px;
     background-color: white;
     border: 0px
   }

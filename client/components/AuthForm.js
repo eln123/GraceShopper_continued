@@ -8,54 +8,67 @@ import { authenticate } from "../store";
  */
 const AuthForm = (props) => {
   const { name, displayName, handleSubmit, error } = props;
-  const renderCheck =
-    displayName === "Login" ? (
-      <section className="bg-whiteblue" id="carousel">
-        <form onSubmit={handleSubmit} name={name}>
-          <div>
-            <label htmlFor="email">
-              <small>Email</small>
-            </label>
-            <input name="email" type="text" />
-          </div>
-          <div>
-            <label htmlFor="password">
-              <small>Password</small>
-            </label>
-            <input name="password" type="password" />
-          </div>
-          <div>
-            <button type="submit">{displayName}</button>
-          </div>
-          <div>
-            <Link to={"/signup"}>Sign Up</Link>
-          </div>
-          {error && error.response && <div> {error.response.data} </div>}
-        </form>
-      </section>
-    ) : (
-      <section className="bg-whiteblue" id="carousel">
-        <form onSubmit={handleSubmit} name={name}>
-          <div>
-            <label htmlFor="email">
-              <small>Email</small>
-            </label>
-            <input name="email" type="text" />
-          </div>
-          <div>
-            <label htmlFor="password">
-              <small>Password</small>
-            </label>
-            <input name="password" type="password" />
-          </div>
-          <div>
-            <button type="submit">{displayName}</button>
-          </div>
-          {error && error.response && <div> {error.response.data} </div>}
-        </form>
-      </section>
-    );
-  return <div>{renderCheck}</div>;
+  return displayName === "Login" ? (
+    <div>
+      <form id="loginForm" onSubmit={handleSubmit} name={name}>
+        <div id="divLoginForm">
+          <label htmlFor="email">
+            <small>Email</small>
+          </label>
+          <input id="inputLoginForm" name="email" type="text" />
+        </div>
+        <div id="divLoginForm">
+          <label htmlFor="password">
+            <small>Password</small>
+          </label>
+          <input id="inputLoginForm" name="password" type="password" />
+        </div>
+        <div id="divLoginForm">
+          <button type="submit">{displayName}</button>
+        </div>
+        <div id="divLoginForm">
+          <Link to={"/signup"}>Sign Up</Link>
+        </div>
+        <div>
+          {error && error.response && (
+            <div
+              style={{
+                position: "absolute",
+                left: "50%",
+                top: "75%",
+                transform: "translateX(-50%)",
+                fontSize: "30px",
+                color: "red",
+              }}
+            >
+              {error.response.data}
+            </div>
+          )}
+        </div>
+      </form>
+    </div>
+  ) : (
+    <div>
+      <form onSubmit={handleSubmit} name={name}>
+        <div>
+          <label htmlFor="email">
+            <small>Email</small>
+          </label>
+          <input name="email" type="text" />
+        </div>
+        <div>
+          <label htmlFor="password">
+            <small>Password</small>
+          </label>
+          <input name="password" type="password" />
+        </div>
+        <div>
+          <button type="submit">{displayName}</button>
+        </div>
+        {error && error.response && <div> {error.response.data} </div>}
+      </form>
+    </div>
+  );
 };
 
 /**
