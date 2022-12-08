@@ -51,3 +51,6 @@
     margin: 0 0 0 0
 }
 
+#divLoginForm #signupButton {
+    background-color: rgb(241, 209, 5)
+}

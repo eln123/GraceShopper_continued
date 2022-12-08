@@ -153,7 +153,7 @@ class Cart extends React.Component {
           </Link>
         </div>
       ) : (
-        <Link to={"/products"}>
+        <Link id="exploreAllItemsLink" to={"/products"}>
           <button id="proceedToCheckoutButton">Explore All Items!</button>
         </Link>
       );
@@ -175,8 +175,8 @@ class Cart extends React.Component {
           </Link>
         </div>
       ) : (
-        <Link to={"/products"}>
-          <button id="proceedToCheckoutButton">Explore All Items!</button>
+        <Link id="exploreAllItemsLink" to={"/products"}>
+          <button id="proceedToCheckoutButton">Explore all items</button>
         </Link>
       );
 
